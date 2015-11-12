@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Playing with JS</title>
+<style>
+   canvas {
+	   border: 10px inset blue;
+   }
+</style>
+<script>
+   window.onload = function() {
+	   var canvas = document.getElementById("drawingCanvas");
+	   var context = canvas.getContext("2d");  
+       context.fillStyle='#FAB1F3'; 
+       context.fillRect(0, 0, 500, 300);
+       context.fill();
+       var X_head=100;
+       var Y_head=50;
+       var Size_head=30;
+       var X_Left_Eye=90;
+       var Y_Left_Eye=40;
+       var Size_Left_Eye=5;
+       var X_Right_Eye=110;
+       var Y_Right_Eye=40;
+       var Size_Right_Eye=5;
+    //-----------------------------------------------------------
+       context.arc(X_head,Y_head,Size_head,Math.PI, 4*Math.PI);
+       context.fillStyle='#BFDEF3'; 
+       context.fill();
+    //-----------------------------------------------------------
+       context.beginPath();
+       context.fillStyle='#58B6F5'; 
+	   context.arc(X_Left_Eye,Y_Left_Eye,Size_Left_Eye,Math.PI, 4*Math.PI);
+       context.fill();
+    //-----------------------------------------------------------
+       context.beginPath();
+       context.fillStyle='#58B6F5'; 
+       context.arc(X_Right_Eye,Y_Right_Eye,Size_Right_Eye,Math.PI, 4*Math.PI);
+       context.fill();
+	   //context.stroke(); 
+    //-----------------------------------------------------------
+       context.beginPath();
+       context.moveTo(90,60);
+       context.lineTo(110,60);
+       context.lineTo(100,70);
+       context.lineTo(90,60);
+       context.fillStyle='#CB2107'
+       context.fill();
+    //-----------------------------------------------------------
+       context.beginPath();
+       var X_Nose=100;
+       var Y_Nose=53;
+       var Size_Nose=3;
+       context.fillStyle='#FF2200'; 
+	   context.arc(X_Nose,Y_Nose,Size_Nose,Math.PI, 4*Math.PI);
+       context.fill();
+     //-----------------------------------------------------------   
+       context.beginPath();
+       var X_Body=100;
+       var Y_Body=110;
+       var Size_Body=40;
+       context.fillStyle='#BFDEF3'; 
+	   context.arc(X_Body,Y_Body,Size_Body,Math.PI, 4*Math.PI);
+       context.fill();
+       //context.stroke();
+    //---------------------------------------------------
+       context.beginPath();
+       var X_Waist=100;
+       var Y_Waist=190;
+       var Size_Waist=60;
+       context.fillStyle='#BFDEF3'; 
+	   context.arc(X_Waist,Y_Waist,Size_Waist,Math.PI, 4*Math.PI);
+       context.fill();
+    //-----------------------------------------------------
+       context.beginPath();
+       var X_button1=100;
+       var Y_button1=110;
+       var Size_button1=2;
+       context.fillStyle='#1AF437'; 
+	   context.arc(X_button1,Y_button1,Size_button1,Math.PI, 4*Math.PI);
+       context.fill();
+       context.stroke();
+    //-------------------------------------------------------
+       context.beginPath();
+       var X_button2=100;
+       var Y_button2=100;
+       var Size_button2=2;
+       context.fillStyle='#1AF437'; 
+	   context.arc(X_button2,Y_button2,Size_button2,Math.PI, 4*Math.PI);
+       context.fill();
+       context.stroke();
+    //---------------------------------------------------------
+       context.beginPath();
+       var X_button3=100;
+       var Y_button3=90;
+       var Size_button3=2;
+       context.fillStyle='#1AF437'; 
+	   context.arc(X_button3,Y_button3,Size_button3,Math.PI, 4*Math.PI);
+       context.fill();
+       context.stroke();
+   //-------------------------------------------------------
+       context.beginPath();
+       context.lineWidth=10;
+       context.strokeStyle='#1AD7F4';
+       context.moveTo(20,110);
+       context.lineTo(60,100);
+       context.lineCap = "round";
+       context.stroke();
+    
+       context.beginPath();
+       context.lineWidth=10;
+       context.strokeStyle='#1AD7F4';
+       context.moveTo(180,110);
+       context.lineTo(140,100);
+       context.lineCap = "round";
+       context.stroke();
+    
+          context.fillStyle = "#00F";
+          context.strokeStyle = "#F00";
+         context.font = 'italic 40pt Arial';
+         context.fillText("Happy New Year!", 70, 289);
+    
+}    
+    
+    
+</script>
+</head>
+<body>
+   <canvas id="drawingCanvas" width="500" height="300"></canvas>
+</body>
+</html>
