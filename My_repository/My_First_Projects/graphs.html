@@ -5,19 +5,14 @@
 <title>Playing with JS</title>
 <style>
    canvas {
-	   border: 10px inset blue;
+     border: 10px inset blue;
    }
 </style>
 <script>
-   function check() {
-   var check_value = document.getElementById('graph_input_end');
-   if((event.keyCode<49)|| (event.keyCode>54))
-      alert( 'Ошибка ввода!Допустимые значения лежат в целом диапозоне от 1 до 6' );
-   }
    function test_canvas() {
      //var start = document.getElementById('graph_input_start').value;
      var start = 0;
-	 var end=300;
+   var end=300;
      var pi_index=0;
      var pi_required = document.getElementById('graph_input_end').value;
      if ((pi_required<1||(pi_required>6))) {
@@ -47,7 +42,7 @@
       context.fillStyle = "#00F";
       context.strokeStyle = "#F38181";
        while ((current_pixel<=300)&&(pi_required!=pi_index)) {
-       	  start+=0.1;
+           start+=0.1;
           current_pixel++;
           current_value=80-Math.sin(start)*15;
           context.lineTo(current_pixel,current_value);
@@ -55,27 +50,27 @@
           if(current_value>94.98){
             pi_index++;
             context.fillText(pi_index+"Pi", current_pixel+5, 55);
-			var current_pixel2=current_pixel;
-			while (current_value>80){
-			    start+=0.1;
-				current_pixel++;
-				current_value=80-Math.sin(start)*15;
-				context.lineTo(current_pixel,current_value);
-				context.stroke();
-			}
-	  }
+      var current_pixel2=current_pixel;
+      while (current_value>80){
+          start+=0.1;
+        current_pixel++;
+        current_value=80-Math.sin(start)*15;
+        context.lineTo(current_pixel,current_value);
+        context.stroke();
+      }
+    }
           if(current_value<65.019){
              pi_index++;
             context.fillText(pi_index+"Pi", current_pixel+5, 105);
-						var current_pixel2=current_pixel;
-			while (current_value<80){
-			    start+=0.1;
-				current_pixel++;
-				current_value=80-Math.sin(start)*15;
-				context.lineTo(current_pixel,current_value);
-				context.stroke();
-			}
-	  }
+            var current_pixel2=current_pixel;
+      while (current_value<80){
+          start+=0.1;
+        current_pixel++;
+        current_value=80-Math.sin(start)*15;
+        context.lineTo(current_pixel,current_value);
+        context.stroke();
+      }
+    }
        }
       start=0;
       current_pixel = start;
@@ -84,7 +79,7 @@
       context.font = 'italic 8pt Arial';
       pi_index=-0.5;
       while ((current_pixel<=300)&&(pi_required!=pi_index-0.5)) {
-       	  start+=0.1;
+           start+=0.1;
           current_pixel++;
           current_value=180-Math.cos(start)*15;
           context.lineTo(current_pixel,current_value);
@@ -92,11 +87,11 @@
           if(current_value<165.019){
             pi_index++;
             context.fillText(pi_index+"Pi", current_pixel-30, 160);
-	  }
+    }
           if(current_value>194.98){
              pi_index++;
             context.fillText(pi_index+"Pi", current_pixel-30, 205);
-	  }
+    }
       }
        //context.font = 'italic 10pt Arial';
        context.fillText("y=sin(x)", 10, 30);
@@ -110,13 +105,16 @@
 </head>
 <body>
    <canvas id="drawingCanvas" width="500" height="300"></canvas>
+  <form action="javascript:void(null);" id="form_id" onsubmit="test_canvas()">
   <p>
     Пожалуйста, введите целочисленное значение желаемого Pi. Pi>0 но Pi<=6: 
-    <input id="graph_input_end" max="250" min="1" maxlength="1" size="1" required value="3" onkeypress="check()">
+    <input id="graph_input_end" max="250" min="1" maxlength="1" size="1" required value="3" pattern="[0-9]{1}">
   </p>
+    <input value="Build graph" type="submit">
+    </form>
   <p>
     Важно заметить, что у синуса и косинуса отставание по фазе достигает Pi/2
-    <button name="graph_button" onclick="test_canvas()">Build graph</button>
+    /<button name="graph_button" onclick="test_canvas()">Build graph</button>
   </p>
 </body>
 </html>

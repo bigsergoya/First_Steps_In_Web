@@ -6,6 +6,7 @@
         <script type="text/javascript" src="jquery.js"></script>
         <script type="text/javascript">
             function AjaxFormRequest(result_id,form_id,url) { 
+              
                 jQuery.ajax({ 
                     url:     url, 
                     type:     "POST", 
@@ -24,11 +25,11 @@
     <body>
         <div>Sending data:</div>   
         <div style="border: 3px blue; width: 200px; height: 100px; padding: 5px;" id="result_div_id"></div>
-        <form method="post" action="javascript:void(null);" id="form_id" onsubmit="AjaxFormRequest('result_div_id', 'form_id', 'test_form.php')">
+        <form method="post" action="javascript:void(null);" id="form_id" onsubmit="AjaxFormRequest('result_div_id', 'form_id', 'form.php')">
         <p>Please, enter your name:
           <input name="name" maxlength="20" size="20" required > </p>
-        <p>Please, enter your phone like: 8xxx-xxx-xx-xx:
-        <input name="phone" size="20" maxlength="14" required type="tel" pattern="8[0-9]{3}-[0-9]{3}+[0-9]{2}-[0-9]{2}" > </p>
+        <p>Please, enter your phone like: 81234567890:
+        <input name="phone" id="inp_phone" size="20" maxlength="14" required type="tel" pattern="[0-9]{11}" > </p>
         <p>Please, enter your mail:
         <input name="mail" maxlength="30" size="20" required type="email"> </p>
         <input value="Send" type="submit">
