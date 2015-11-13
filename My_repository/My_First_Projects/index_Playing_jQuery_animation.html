@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Playing with JS animation</title>
+<style>
+   b{
+	   background-color : #3AAACF;
+	   text-align: center;
+   }
+   p{
+	   text-align: center;
+	   font:12pt sans-serif;
+	   color:#FF5D40;
+	   align: top;
+   }
+   input {
+	   border: 5px inset yellow;
+	   background-color : red;
+	   align: bottom;
+   }
+   body {
+		background-color: #5DE100;
+}
+  .center{
+  position:absolute;
+  }
+</style>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript">   
+$(document).ready(function(){
+   $('#but1').click(function(){
+      $('#but1').prop('disabled', true);
+	  //$('#but1').hide();
+      $('#par1').animate({fontSize:"1.5em"},1000);
+      $('#par1').animate({marginLeft:Math.random()*(500)+'px'},1000);
+	  $('#part2').animate({fontSize:"1.5em"},1000);
+      $('#part2').animate({marginLeft:Math.random()*(500)+'px'},1000);
+      $('#part2').animate({marginTop:Math.random()*(500-200+1)+200+'px'},1000);
+      $('#part2').animate({fontSize:"1em"},1000);
+      $('#part2').animate({marginLeft:"0px"},1000);
+      $('#part2').animate({marginTop:"0px"},1000);
+      $('#par1').animate({marginTop:Math.random()*(500-200+1)+200+'px'},1000);
+      $('#par1').animate({fontSize:"1em"},1000);
+      $('#par1').animate({marginLeft:"0px"},1000);
+      $('#par1').animate({marginTop:"0px"},1000);
+	  
+	  $('#but1').animate({fontSize:"1.5em"},1000);
+      $('#but1').animate({marginLeft:Math.random()*(500)+'px'},1000);
+      $('#but1').animate({marginTop:Math.random()*(500-200+1)+200+'px'},1000);
+      $('#but1').animate({fontSize:"1em"},1000);
+      $('#but1').animate({marginLeft:"0px"},1000);
+      $('#but1').animate({marginTop:"0px"},1000);
+	  
+      $('#but1').prop('disabled', false);
+      //$('#but1').show();
+   });
+});                                           
+</script> 
+</head>
+<body>
+<p id="part2"><b>Тестовая анимашка. Приятного просмотра :).</b></p> 
+
+<p id="par1"><b>To strive to seek to find and not to yield - A.Tennyson.</b></p>
+<div class="center">
+<input type="button" id="but1" value="Выполнить анимацию"/>
+</div>
+</body>
+</html>
